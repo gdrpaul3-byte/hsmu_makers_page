@@ -1,0 +1,13 @@
+desktop.ini
+artifacts/
+
+# Internal source documents and member records are not public website assets.
+*.hwp
+*.pdf
+메이커스_동아리_회원정보.*
+동행 동아리 회칙.*
+[붙임1] 학생단체 등록 관련 양식-메이커스*
+ai_rookie/Habit_Vault_AI_제안서.*
+
+# The deployed schedule console is linked externally from the homepage.
+makers_schedule/
