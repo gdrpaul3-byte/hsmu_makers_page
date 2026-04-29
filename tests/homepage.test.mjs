@@ -14,6 +14,8 @@ test('homepage presents Makers club identity and public content sections', async
   assert.match(html, /<html lang="ko">/);
   assert.match(html, /<title>메이커스\(Makers\) 동아리/);
   assert.match(html, /무엇이든 만들어보는 문화/);
+  assert.match(html, /요즘 만드는 것들/);
+  assert.doesNotMatch(html, /이미 굴러가는 결과물/);
   assert.match(html, /id="activities"/);
   assert.match(html, /id="projects"/);
   assert.match(html, /id="join"/);
