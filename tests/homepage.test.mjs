@@ -22,6 +22,15 @@ test('homepage presents Makers club identity and public content sections', async
   assert.match(html, /id="schedule"/);
 });
 
+test('homepage header links to the signup form', async () => {
+  const html = await readText('index.html');
+
+  assert.match(
+    html,
+    /<a class="nav-cta" href="https:\/\/forms\.gle\/CxZwUbVsPVLYmVpg7">가입 신청!<\/a>/
+  );
+});
+
 test('homepage reuses local Makers assets and links the existing schedule app', async () => {
   const html = await readText('index.html');
 
