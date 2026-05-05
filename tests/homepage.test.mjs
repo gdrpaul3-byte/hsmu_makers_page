@@ -23,6 +23,15 @@ test('homepage presents Makers club identity and public content sections', async
   assert.match(html, /id="schedule"/);
 });
 
+test('homepage presents gallery before activity details', async () => {
+  const html = await readText('index.html');
+  const nav = html.match(/<nav class="site-nav"[\s\S]*?<\/nav>/)?.[0] ?? '';
+
+  assert.ok(html.indexOf('id="projects"') < html.indexOf('id="activities"'));
+  assert.ok(nav.indexOf('href="#projects"') < nav.indexOf('href="#activities"'));
+  assert.doesNotMatch(nav, />프로젝트</);
+});
+
 test('homepage gallery features Escape from Hwaseong', async () => {
   const html = await readText('index.html');
 
