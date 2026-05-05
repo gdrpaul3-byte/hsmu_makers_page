@@ -32,6 +32,15 @@ test('homepage gallery features Escape from Hwaseong', async () => {
   await access(new URL('gallery/escape-from-hwaseong.png', ROOT));
 });
 
+test('homepage gallery features the cognitive experiment homepage', async () => {
+  const html = await readText('index.html');
+
+  assert.match(html, /인지실험 홈페이지/);
+  assert.match(html, /https:\/\/jeoungan\.github\.io\/homepage002\//);
+  assert.match(html, /gallery\/cognitive-experiment-homepage\.png/);
+  await access(new URL('gallery/cognitive-experiment-homepage.png', ROOT));
+});
+
 test('homepage header links to the signup form', async () => {
   const html = await readText('index.html');
 

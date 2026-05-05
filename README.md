@@ -10,6 +10,7 @@
 - `makers_logo.png` - hero and brand image
 - `grok-video-a53d6321-deeb-4151-bd2c-b1e758e7f655.mp4` - prototype media
 - `gallery/escape-from-hwaseong.png` - gallery screenshot for the first member game
+- `gallery/cognitive-experiment-homepage.png` - gallery screenshot for the cognitive experiment homepage
 
 ## Schedule Console
 

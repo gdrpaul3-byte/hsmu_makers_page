@@ -603,6 +603,7 @@ h3 {
 
 .gallery-layout {
   display: grid;
+  gap: var(--space-md);
 }
 
 .gallery-feature {
