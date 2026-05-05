@@ -41,6 +41,15 @@ test('homepage gallery features the cognitive experiment homepage', async () => 
   await access(new URL('gallery/cognitive-experiment-homepage.png', ROOT));
 });
 
+test('homepage gallery features the Midnight Chrome Drift video', async () => {
+  const html = await readText('index.html');
+
+  assert.match(html, /Midnight Chrome Drift/);
+  assert.match(html, /https:\/\/www\.youtube\.com\/watch\?v=5CBFiwGoz0w/);
+  assert.match(html, /gallery\/midnight-chrome-drift\.jpg/);
+  await access(new URL('gallery/midnight-chrome-drift.jpg', ROOT));
+});
+
 test('homepage header links to the signup form', async () => {
   const html = await readText('index.html');
 
