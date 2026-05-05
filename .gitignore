@@ -1,6 +1,9 @@
 desktop.ini
 artifacts/
 
+# Source photos can be large; the homepage uses optimized studio-board images.
+resources/KakaoTalk_*.jpg
+
 # Internal source documents and member records are not public website assets.
 *.hwp
 *.pdf

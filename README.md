@@ -12,6 +12,7 @@
 - `gallery/escape-from-hwaseong.png` - gallery screenshot for the first member game
 - `gallery/cognitive-experiment-homepage.png` - gallery screenshot for the cognitive experiment homepage
 - `gallery/midnight-chrome-drift.jpg` - gallery thumbnail for the Midnight Chrome Drift video
+- `resources/studio-board-*.jpg` - optimized resource photos used in the activity photo board
 
 ## Schedule Console
 

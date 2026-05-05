@@ -68,6 +68,28 @@ test('homepage reuses local Makers assets and links the existing schedule app', 
   assert.doesNotMatch(html, /href="\.\/makers_schedule\/index\.html"/);
 });
 
+test('homepage displays local resource images as a visual board', async () => {
+  const html = await readText('index.html');
+  const resourceImages = [
+    'resources/studio-board-coding.jpg',
+    'resources/studio-board-prototype.jpg',
+    'resources/studio-board-lab.jpg',
+    'resources/studio-board-panorama.jpg',
+    'resources/studio-board-desk.jpg',
+    'resources/studio-board-parts.jpg',
+    'resources/studio-board-agent.jpg',
+  ];
+
+  const mediaBlocks = html.match(/<figure class="resource-photo/g) ?? [];
+  assert.equal(mediaBlocks.length, 7);
+  assert.match(html, /class="resource-board"/);
+
+  for (const imagePath of resourceImages) {
+    assert.match(html, new RegExp(imagePath.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
+    await access(new URL(imagePath, ROOT));
+  }
+});
+
 test('homepage does not expose member private contact details', async () => {
   const html = await readText('index.html');
 

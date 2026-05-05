@@ -511,6 +511,53 @@ h3 {
   color: var(--ink-soft);
 }
 
+.resource-board {
+  margin-top: var(--space-md);
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-auto-rows: 150px;
+  gap: var(--space-md);
+}
+
+.resource-photo {
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--navy);
+  box-shadow: 0 0 0 1px color-mix(in oklch, white, transparent 48%) inset;
+}
+
+.resource-photo-large {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.resource-photo-wide {
+  grid-column: span 2;
+}
+
+.resource-photo-pano {
+  grid-column: span 3;
+}
+
+.resource-photo-tall {
+  grid-row: span 2;
+}
+
+.resource-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 420ms var(--ease-out), filter 420ms var(--ease-out);
+}
+
+.resource-photo:hover img {
+  filter: saturate(1.08) contrast(1.04);
+  transform: scale(1.035);
+}
+
 .lab-strip {
   display: grid;
   grid-template-columns: minmax(280px, 0.82fr) minmax(360px, 1.18fr);
@@ -854,6 +901,10 @@ h3 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .resource-board {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .project-layout,
   .gallery-feature,
   .schedule-section,
@@ -949,6 +1000,29 @@ h3 {
   .activity-tile.wide {
     grid-column: auto;
     min-height: 210px;
+  }
+
+  .resource-board {
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+  }
+
+  .resource-photo,
+  .resource-photo-large,
+  .resource-photo-wide,
+  .resource-photo-pano,
+  .resource-photo-tall {
+    grid-column: auto;
+    grid-row: auto;
+    aspect-ratio: 4 / 3;
+  }
+
+  .resource-photo-pano {
+    aspect-ratio: 16 / 7;
+  }
+
+  .resource-photo-tall {
+    aspect-ratio: 3 / 4;
   }
 
   .lab-strip,
