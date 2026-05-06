@@ -8,6 +8,15 @@ async function readText(path) {
   return readFile(new URL(path, ROOT), 'utf8');
 }
 
+async function readPngDimensions(path) {
+  const buffer = await readFile(new URL(path, ROOT));
+  assert.equal(buffer.toString('ascii', 1, 4), 'PNG');
+  return {
+    width: buffer.readUInt32BE(16),
+    height: buffer.readUInt32BE(20),
+  };
+}
+
 test('homepage presents Makers club identity and public content sections', async () => {
   const html = await readText('index.html');
 
@@ -68,6 +77,7 @@ test('homepage gallery features Campus Survival', async () => {
   assert.match(html, /gallery\/campus-survival\.png/);
   assert.doesNotMatch(html, /어두운 캠퍼스 분위기/);
   await access(new URL('gallery/campus-survival.png', ROOT));
+  assert.deepEqual(await readPngDimensions('gallery/campus-survival.png'), { width: 779, height: 663 });
 });
 
 test('homepage header links to the signup form', async () => {
