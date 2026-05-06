@@ -86,12 +86,13 @@ test('homepage displays local resource images as a visual board', async () => {
     'resources/studio-board-panorama.jpg',
     'resources/studio-board-desk.jpg',
     'resources/studio-board-parts.jpg',
-    'resources/studio-board-agent.jpg',
   ];
 
   const mediaBlocks = html.match(/<figure class="resource-photo/g) ?? [];
-  assert.equal(mediaBlocks.length, 7);
+  assert.equal(mediaBlocks.length, 6);
   assert.match(html, /class="resource-board"/);
+  assert.doesNotMatch(html, /studio-board-agent\.jpg/);
+  assert.doesNotMatch(html, /AI 에이전트 대화 캡처/);
 
   for (const imagePath of resourceImages) {
     assert.match(html, new RegExp(imagePath.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
