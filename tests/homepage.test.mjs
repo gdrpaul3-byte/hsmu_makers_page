@@ -59,6 +59,15 @@ test('homepage gallery features the Midnight Chrome Drift video', async () => {
   await access(new URL('gallery/midnight-chrome-drift.jpg', ROOT));
 });
 
+test('homepage gallery features Campus Survival', async () => {
+  const html = await readText('index.html');
+
+  assert.match(html, /Campus Survival/);
+  assert.match(html, /https:\/\/jeoungan\.github\.io\/game0505_2\/game0505_%EC%9E%90%EB%A3%8C\/index\.html/);
+  assert.match(html, /gallery\/campus-survival\.png/);
+  await access(new URL('gallery/campus-survival.png', ROOT));
+});
+
 test('homepage header links to the signup form', async () => {
   const html = await readText('index.html');
 
