@@ -32,6 +32,17 @@ test('homepage presents Makers club identity and public content sections', async
   assert.match(html, /id="schedule"/);
 });
 
+test('homepage includes Google Analytics tracking tag', async () => {
+  const html = await readText('index.html');
+
+  assert.match(html, /https:\/\/www\.googletagmanager\.com\/gtag\/js\?id=G-TS41WNGN58/);
+  assert.match(html, /window\.dataLayer = window\.dataLayer \|\| \[\];/);
+  assert.match(html, /function gtag\(\)\{dataLayer\.push\(arguments\);\}/);
+  assert.match(html, /gtag\('js', new Date\(\)\);/);
+  assert.match(html, /gtag\('config', 'G-TS41WNGN58'\);/);
+  assert.ok(html.indexOf('googletagmanager.com/gtag/js') < html.indexOf('<link rel="stylesheet"'));
+});
+
 test('homepage presents gallery before activity details', async () => {
   const html = await readText('index.html');
   const nav = html.match(/<nav class="site-nav"[\s\S]*?<\/nav>/)?.[0] ?? '';
