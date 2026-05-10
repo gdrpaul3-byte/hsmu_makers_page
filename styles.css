@@ -403,10 +403,15 @@ ul {
 
 .section-grid,
 .projects-section,
+.archive-section,
 .workflow-section,
 .schedule-section,
 .join-section {
   padding: clamp(var(--space-4xl), 9vw, var(--space-5xl)) clamp(var(--space-lg), 6vw, var(--space-5xl));
+}
+
+main section[id] {
+  scroll-margin-top: 84px;
 }
 
 .section-heading {
@@ -423,6 +428,7 @@ ul {
 
 .section-heading .eyebrow,
 .projects-section .eyebrow,
+.archive-section .eyebrow,
 .workflow-section .eyebrow,
 .schedule-section .eyebrow,
 .join-section .eyebrow {
@@ -721,6 +727,66 @@ h3 {
   text-decoration: none;
 }
 
+.archive-section {
+  background: color-mix(in oklch, var(--mint), white 68%);
+}
+
+.archive-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-md);
+}
+
+.archive-card {
+  min-height: 310px;
+  display: grid;
+  align-content: space-between;
+  gap: var(--space-xl);
+  border: 2px solid var(--navy);
+  padding: clamp(var(--space-xl), 4vw, var(--space-3xl));
+  background: var(--surface);
+  box-shadow: 10px 10px 0 color-mix(in oklch, var(--navy), transparent 12%);
+}
+
+.archive-card:nth-child(2) {
+  background: color-mix(in oklch, var(--blue), white 62%);
+}
+
+.archive-label {
+  color: var(--blue);
+  font-family: var(--font-pixel);
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.archive-card p {
+  color: var(--ink-soft);
+}
+
+.archive-link {
+  width: fit-content;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  border: 2px solid var(--navy);
+  border-radius: var(--radius-sm);
+  padding: 0 var(--space-xl);
+  background: var(--navy);
+  color: var(--paper);
+  font-weight: 900;
+  text-decoration: none;
+  transition:
+    transform 160ms var(--ease-out),
+    box-shadow 160ms var(--ease-out);
+}
+
+.archive-link:hover,
+.archive-link:focus-visible {
+  box-shadow: 5px 5px 0 color-mix(in oklch, var(--orange), transparent 6%);
+  transform: translateY(-2px);
+}
+
 .workflow-section {
   background: var(--paper);
 }
@@ -902,6 +968,7 @@ h3 {
   }
 
   .project-layout,
+  .archive-grid,
   .gallery-feature,
   .schedule-section,
   .join-section,
@@ -935,7 +1002,7 @@ h3 {
     font-size: 0.86rem;
   }
 
-  .site-nav a:nth-child(2),
+  .site-nav a[href="#activities"],
   .site-nav a[href="#join"] {
     display: none;
   }
@@ -1019,6 +1086,7 @@ h3 {
   .lab-strip,
   .section-grid,
   .projects-section,
+  .archive-section,
   .workflow-section,
   .schedule-section,
   .join-section {

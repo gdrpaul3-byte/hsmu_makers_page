@@ -28,6 +28,7 @@ test('homepage presents Makers club identity and public content sections', async
   assert.doesNotMatch(html, /요즘 만드는 것들/);
   assert.match(html, /id="activities"/);
   assert.match(html, /id="projects"/);
+  assert.match(html, /id="archive"/);
   assert.match(html, /id="join"/);
   assert.match(html, /id="schedule"/);
 });
@@ -43,13 +44,29 @@ test('homepage includes Google Analytics tracking tag', async () => {
   assert.ok(html.indexOf('googletagmanager.com/gtag/js') < html.indexOf('<link rel="stylesheet"'));
 });
 
-test('homepage presents gallery before activity details', async () => {
+test('homepage presents gallery and archive before activity details', async () => {
   const html = await readText('index.html');
   const nav = html.match(/<nav class="site-nav"[\s\S]*?<\/nav>/)?.[0] ?? '';
 
   assert.ok(html.indexOf('id="projects"') < html.indexOf('id="activities"'));
-  assert.ok(nav.indexOf('href="#projects"') < nav.indexOf('href="#activities"'));
+  assert.ok(html.indexOf('id="projects"') < html.indexOf('id="archive"'));
+  assert.ok(html.indexOf('id="archive"') < html.indexOf('id="activities"'));
+  assert.ok(nav.indexOf('href="#projects"') < nav.indexOf('href="#archive"'));
+  assert.ok(nav.indexOf('href="#archive"') < nav.indexOf('href="#activities"'));
   assert.doesNotMatch(nav, />프로젝트</);
+});
+
+test('homepage includes an archive tab for external reports and dashboards', async () => {
+  const html = await readText('index.html');
+  const nav = html.match(/<nav class="site-nav"[\s\S]*?<\/nav>/)?.[0] ?? '';
+
+  assert.match(nav, /href="#archive">아카이브<\/a>/);
+  assert.match(html, /<section class="archive-section" id="archive"/);
+  assert.match(html, /HSMU Makers Hermes 밋업 요약/);
+  assert.match(html, /2026 전국민 AI 경진대회/);
+  assert.match(html, /https:\/\/gdrpaul3-byte\.github\.io\/hermes_meetup_summary_05092026\//);
+  assert.match(html, /https:\/\/gdrpaul3-byte\.github\.io\/ai_challenge_2026_dashboard\//);
+  assert.equal((html.match(/class="archive-card"/g) ?? []).length, 2);
 });
 
 test('homepage gallery features Escape from Hwaseong', async () => {
@@ -148,6 +165,7 @@ test('homepage style and script files are wired and avoid banned card stripe pat
 
   assert.match(html, /href="\.\/styles\.css"/);
   assert.match(html, /src="\.\/script\.js"/);
+  assert.match(css, /scroll-margin-top:\s*84px/);
   assert.doesNotMatch(css, /border-(left|right)\s*:\s*(?:[2-9]|\d{2,})px/i);
   assert.match(script, /data-copy-email/);
 });
