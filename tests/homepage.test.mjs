@@ -108,6 +108,16 @@ test('homepage gallery features Campus Survival', async () => {
   assert.deepEqual(await readPngDimensions('gallery/campus-survival.png'), { width: 779, height: 663 });
 });
 
+test('homepage gallery features HWARAK LIVE', async () => {
+  const html = await readText('index.html');
+
+  assert.match(html, /화락제도 락이다/);
+  assert.match(html, /HWARAK LIVE/);
+  assert.match(html, /https:\/\/jeoungan\.github\.io\/Hwarack_is_rock\//);
+  assert.match(html, /gallery\/hwarack-is-rock\.png/);
+  await access(new URL('gallery/hwarack-is-rock.png', ROOT));
+});
+
 test('homepage header links to the signup form', async () => {
   const html = await readText('index.html');
 
