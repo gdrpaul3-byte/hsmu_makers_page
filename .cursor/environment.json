@@ -1,0 +1,16 @@
+{
+  "name": "HSMU Makers Page",
+  "ports": [
+    {
+      "name": "web",
+      "port": 8000
+    }
+  ],
+  "terminals": [
+    {
+      "name": "web",
+      "command": "python3 -m http.server 8000",
+      "description": "Serves the static Makers homepage at http://localhost:8000/. Open index.html through this server so relative asset paths resolve."
+    }
+  ]
+}
