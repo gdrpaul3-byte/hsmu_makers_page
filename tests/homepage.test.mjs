@@ -118,6 +118,16 @@ test('homepage gallery features HWARAK LIVE', async () => {
   await access(new URL('gallery/hwarack-is-rock.png', ROOT));
 });
 
+test('homepage gallery features LAST SHUTTLE', async () => {
+  const html = await readText('index.html');
+
+  assert.match(html, /마지막 셔틀/);
+  assert.match(html, /LAST SHUTTLE/);
+  assert.match(html, /https:\/\/last-shuttle\.jpcgpt\.chatgpt\.site/);
+  assert.match(html, /gallery\/last-shuttle\.png/);
+  await access(new URL('gallery/last-shuttle.png', ROOT));
+});
+
 test('homepage header links to the signup form', async () => {
   const html = await readText('index.html');
 
