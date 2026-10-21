@@ -118,6 +118,19 @@ test('homepage gallery features HWARAK LIVE', async () => {
   await access(new URL('gallery/hwarack-is-rock.png', ROOT));
 });
 
+test('homepage gallery features campus signage', async () => {
+  const html = await readText('index.html');
+
+  assert.match(html, /캠퍼스 사이니지/);
+  assert.match(html, /화성의과학대학교 캠퍼스 키오스크 광고판/);
+  assert.match(html, /https:\/\/hsmu-campus-signage\.vercel\.app\//);
+  assert.match(html, /ad-request 페이지/);
+  assert.match(html, /gallery\/campus-signage\.png/);
+  assert.match(html, /사이트 열기/);
+  await access(new URL('gallery/campus-signage.png', ROOT));
+  assert.deepEqual(await readPngDimensions('gallery/campus-signage.png'), { width: 1200, height: 900 });
+});
+
 test('homepage gallery features LAST SHUTTLE', async () => {
   const html = await readText('index.html');
 
