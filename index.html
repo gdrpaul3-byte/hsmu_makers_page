@@ -18,6 +18,7 @@
     gtag('config', 'G-TS41WNGN58');
   </script>
   <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./field-notes.css" />
 </head>
 <body>
   <header class="site-header" data-nav>
@@ -30,6 +31,7 @@
     </a>
     <nav class="site-nav" aria-label="주요 메뉴">
       <a href="#projects">갤러리</a>
+      <a href="#field-notes">현장 기록</a>
       <a href="#archive">아카이브</a>
       <a href="#activities">활동</a>
       <a href="#schedule">일정</a>
@@ -40,7 +42,10 @@
 
   <main id="top">
     <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-backdrop" aria-hidden="true"></div>
+      <figure class="hero-photo">
+        <div class="hero-photo-frame"><img src="./resources/mars-2026/group-02.webp" alt="2026년 11월 4일 코엑스 AI 전시 현장을 찾은 메이커스 단체사진" fetchpriority="high" width="2000" height="1500" /></div>
+        <figcaption>MAKERS FIELD NOTES / COEX / 2026.11.04</figcaption>
+      </figure>
       <div class="hero-content">
         <p class="eyebrow">Hwaseong Medi-Science University</p>
         <h1 id="hero-title">메이커스</h1>
@@ -80,6 +85,20 @@
         <p class="section-lede">동아리 회원들이 만든 게임, 앱, 영상, 시제품을 모아두는 공간입니다.</p>
       </div>
       <div class="gallery-layout">
+        <article class="gallery-feature taximate-feature">
+          <a class="gallery-image" href="https://campustaximate.vercel.app/" aria-label="택시메이트 동승 모집 서비스 열기">
+            <img src="./gallery/taximate-screen.jpg" alt="출발역을 고르고 동승을 모집하는 택시메이트 화면" loading="lazy" />
+          </a>
+          <div class="gallery-copy">
+            <p class="project-kicker">member work / campus service</p>
+            <h3>택시메이트</h3>
+            <p>어천역·초지역에서 화성의과학대학교까지, 같은 시간에 등교하는 학우를 연결하는 택시 동승 웹앱입니다. 메이커스 회장 문서정이 수원에서 화성으로 통학하며 느낀 배차 간격과 택시비 부담을 계기로 기획·제작했습니다.</p>
+            <p>출발 시간에 맞춰 모집·참여하고 채팅으로 만날 장소를 조율할 수 있습니다. 정원은 모집자를 포함해 4명이며 비회원 이용도 가능합니다.</p>
+            <div class="gallery-tags" aria-label="작품 태그"><span>Campus Service</span><span>Ride Sharing</span><span>Web App</span></div>
+            <a class="gallery-link" href="https://campustaximate.vercel.app/">택시메이트 열기 ↗</a>
+            <p class="field-meta">학교 공식 서비스가 아닙니다. 택시 호출·결제·정산은 이용자가 직접 진행합니다.</p>
+          </div>
+        </article>
         <article class="gallery-feature">
           <a class="gallery-image" href="https://escape-from-hwaseong.web.app/" aria-label="Escape from Hwaseong 게임 열기">
             <img src="./gallery/escape-from-hwaseong.png" alt="Escape from Hwaseong 게임 플레이 화면" />
@@ -213,8 +232,56 @@
               <span>Scheduled Ads</span>
             </div>
             <a class="gallery-link" href="https://hsmu-campus-signage.vercel.app/">사이트 열기</a>
+            <div class="signage-evidence">
+              <a href="./gallery/signage-taximate.webp" target="_blank" rel="noopener"><img src="./gallery/signage-taximate.webp" alt="캠퍼스 키오스크에 실제로 표시된 택시메이트 광고와 QR 코드" loading="lazy" /></a>
+              <a href="./gallery/signage-request.webp" target="_blank" rel="noopener"><img src="./gallery/signage-request.webp" alt="캠퍼스 키오스크의 광고 의뢰 화면" loading="lazy" /></a>
+            </div>
+            <p class="field-meta">캠퍼스 적용 기록 / 택시메이트 광고를 사이니지에 게시해 앱 소개와 QR 접근 경로를 연결했습니다.</p>
           </div>
         </article>
+      </div>
+    </section>
+
+    <section class="field-section" id="field-notes" aria-labelledby="field-title">
+      <div class="field-heading">
+        <div>
+          <p class="eyebrow">field notes / 2026.11.04</p>
+          <h2 id="field-title">AI를 만나는 현장,<br />함께 넓히는 시야</h2>
+        </div>
+        <div class="field-summary">
+          <h3>AI EXPO 「MARS 2026」 방문</h3>
+          <p>화성의과학대학교 AI 동아리 메이커스가 11월 4일 코엑스를 찾았습니다. AI 진단·헬스케어부터 로봇까지, 전시장에서 만난 기술을 사진으로 기록했습니다.</p>
+          <p class="field-meta">행사 기간 11.03–11.05 · 서울 코엑스 3층 D홀 및 컨퍼런스룸<br />AIoT 국제전시회 동시 개최. 단체사진은 AIoT Week Korea 포토월에서 촬영했습니다.</p>
+          <a class="gallery-link" href="https://hs-expomars.com/" target="_blank" rel="noopener noreferrer">공식 행사 안내 ↗</a>
+        </div>
+      </div>
+      <div class="field-gallery">
+        <figure class="field-wide"><a href="./resources/mars-2026/group-01.webp" target="_blank" rel="noopener"><img src="./resources/mars-2026/group-01.webp" alt="코엑스 현장의 메이커스 단체사진" loading="lazy" width="2000" height="1500" /></a><figcaption>01 / 함께 찾은 코엑스</figcaption></figure>
+        <figure><a href="./resources/mars-2026/healthcare-booth.webp" target="_blank" rel="noopener"><img src="./resources/mars-2026/healthcare-booth.webp" alt="AI 스마트 진단검사 전시 부스" loading="lazy" /></a><figcaption>02 / AI 진단·헬스케어</figcaption></figure>
+        <figure><a href="./resources/mars-2026/robot.webp" target="_blank" rel="noopener"><img src="./resources/mars-2026/robot.webp" alt="전시장에서 관찰한 로봇" loading="lazy" /></a><figcaption>03 / 화면 밖으로 나온 기술</figcaption></figure>
+      </div>
+      <details class="field-more">
+        <summary>현장 사진 더 보기 <span>전시와 체험의 기록</span></summary>
+        <div class="field-grid">
+          <figure><a href="./resources/mars-2026/rehab-device.webp" target="_blank" rel="noopener"><img src="./resources/mars-2026/rehab-device.webp" alt="재활 보조 장비" loading="lazy" /></a><figcaption>재활 보조 장비</figcaption></figure>
+          <figure><a href="./resources/mars-2026/ai-diagnostics.webp" target="_blank" rel="noopener"><img src="./resources/mars-2026/ai-diagnostics.webp" alt="AI 근감소증·인지 검사 전시" loading="lazy" /></a><figcaption>AI 검사 기술</figcaption></figure>
+          <figure><a href="./resources/mars-2026/health-demo.webp" target="_blank" rel="noopener"><img src="./resources/mars-2026/health-demo.webp" alt="건강 측정 기술 시연 화면" loading="lazy" /></a><figcaption>건강 측정 시연</figcaption></figure>
+          <figure><a href="./resources/mars-2026/exhibitor-sign.webp" target="_blank" rel="noopener"><img src="./resources/mars-2026/exhibitor-sign.webp" alt="참가 기업 전시 표지" loading="lazy" /></a><figcaption>참가 기업 전시</figcaption></figure>
+          <figure><a href="./resources/mars-2026/health-space.webp" target="_blank" rel="noopener"><img src="./resources/mars-2026/health-space.webp" alt="건강 측정 체험 공간" loading="lazy" /></a><figcaption>체험 공간</figcaption></figure>
+          <figure><a href="./resources/mars-2026/humanoid.webp" target="_blank" rel="noopener"><img src="./resources/mars-2026/humanoid.webp" alt="휴머노이드 로봇 전시" loading="lazy" /></a><figcaption>휴머노이드</figcaption></figure>
+          <figure><a href="./resources/mars-2026/dashboard.webp" target="_blank" rel="noopener"><img src="./resources/mars-2026/dashboard.webp" alt="전시 모니터의 데이터 화면" loading="lazy" /></a><figcaption>데이터와 화면</figcaption></figure>
+        </div>
+      </details>
+    </section>
+
+    <section class="field-section booth-section" id="booth" aria-labelledby="booth-title">
+      <div class="field-heading">
+        <div><p class="eyebrow">hwarak festival / 2026.09.08</p><h2 id="booth-title">직접 만든 게임을<br />함께 플레이하는 자리</h2></div>
+        <div class="field-summary"><h3>2026 화락제 메이커스 게임 체험 부스</h3><p>2026년 9월 8일 화성의과학대학교 화락제 부스에서 「화성 탈출」, 「화락제도 락이다」, 「마지막 셔틀」 세 가지 게임을 소개했습니다. QR로 게임에 접속하고 플레이 기록을 인증하는 참여 방식으로, 동아리의 결과물을 현장에서 경험할 수 있도록 운영했습니다.</p><p class="field-meta">회원 작품 소개 · 게임 체험 · QR 참여 안내<br />아래 포스터는 당시 행사 안내 자료입니다.</p></div>
+      </div>
+      <div class="booth-gallery">
+        <figure><a href="./resources/booth/booth-operation.webp" target="_blank" rel="noopener"><img src="./resources/booth/booth-operation.webp" alt="노트북과 모니터로 게임을 체험하는 메이커스 부스 현장" loading="lazy" /></a><figcaption>만든 결과물을 실제 참여자와 만나는 자리</figcaption></figure>
+        <figure><a href="./resources/booth/booth-poster.webp" target="_blank" rel="noopener"><img src="./resources/booth/booth-poster.webp" alt="화성 탈출, 화락제도 락이다, 마지막 셔틀의 QR 참여 방법을 안내한 부스 포스터" loading="lazy" /></a><figcaption>게임 3종과 QR 참여 방법을 담은 행사 포스터</figcaption></figure>
       </div>
     </section>
 
@@ -370,7 +437,8 @@
         <li>학기 중 공식 활동 참여와 상호 존중 기반 협업</li>
       </ul>
     </section>
-  </main>
+  <section class="field-section quick-access" id="quick-access"><p class="eyebrow">OPEN &amp; EXPLORE</p><h2>휴대폰으로 바로 이어보기</h2><p>링크를 누르거나 QR 코드를 스캔하면 실제 홈페이지와 서비스를 열 수 있습니다.</p><div class="quick-grid"><article><a href="https://gdrpaul3-byte.github.io/hsmu_makers_page/" target="_blank" rel="noopener noreferrer"><img src="resources/qr/makers.png" alt="메이커스 홈페이지 접속 QR 코드" loading="lazy"><h3>메이커스 홈페이지 ↗</h3></a><p>동아리 소개와 작품·활동 기록을 공유하세요.</p></article><article><a href="https://campustaximate.vercel.app/" target="_blank" rel="noopener noreferrer"><img src="resources/qr/taximate.png" alt="택시메이트 접속 QR 코드" loading="lazy"><h3>택시메이트 ↗</h3></a><p>같은 방향의 등굣길에 함께 탈 학생을 찾는 웹앱입니다.</p></article><article><a href="https://hsmu-campus-signage.vercel.app/" target="_blank" rel="noopener noreferrer"><img src="resources/qr/signage.png" alt="캠퍼스 키오스크 방송 접속 QR 코드" loading="lazy"><h3>캠퍼스 키오스크 방송 ↗</h3></a><p>교내 세로형 화면에서 재생하는 학교 소식과 학생 작품 광고입니다.</p></article></div></section>
+</main>
 
   <footer class="site-footer">
     <p>메이커스(Makers) · 화성의과학대학교 창작형 기술 동아리</p>
